@@ -35,7 +35,7 @@ public class MemoCreateActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.menu.menu_memo_create:
+            case R.id.create_save:
                 // createの処理をここに書く
                 saveMemo();
                 finish();
