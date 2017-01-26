@@ -15,7 +15,7 @@ public class MemoDB  extends Model{
     public String title;
 
     @Column(name = "memo")
-    public String mamo;
+    public String memo;
 
     @Column(name = "date")
     public String date;

@@ -49,7 +49,7 @@ public class MemoCreateActivity extends AppCompatActivity {
 
     private void saveMemo(){
         mMemoDB.title = mTitle.getText().toString();
-        mMemoDB.mamo = mMemo.getText().toString();
+        mMemoDB.memo = mMemo.getText().toString();
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.JAPANESE);
         mMemoDB.date = sdf.format(date);
