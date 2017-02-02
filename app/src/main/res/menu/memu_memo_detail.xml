@@ -8,5 +8,11 @@
         android:orderInCategory="100"
         android:title="save"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/detail_delete"
+        android:icon="@android:drawable/ic_delete"
+        android:orderInCategory="100"
+        android:title="delete"
+        app:showAsAction="ifRoom"/>
 
 </menu>
