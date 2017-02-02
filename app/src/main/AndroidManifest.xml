@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MemoCreateActivity" />
+        <activity android:name=".MemoDetailActivity" />
 
     </application>
 
