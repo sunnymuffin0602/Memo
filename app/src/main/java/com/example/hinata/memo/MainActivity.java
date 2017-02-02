@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                MemoDB data= (MemoDB)parent.getItemAtPosition(position);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MemoDB data = (MemoDB) parent.getItemAtPosition(position);
                 Intent intent = new Intent(MainActivity.this, MemoDetailActivity.class);
-                intent.putExtra("date",data.date);
+                intent.putExtra("date", data.date);
                 startActivity(intent);
             }
         });

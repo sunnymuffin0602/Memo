@@ -7,5 +7,5 @@
         android:icon="@android:drawable/ic_input_add"
         android:orderInCategory="100"
         android:title="新規作成"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 </menu>

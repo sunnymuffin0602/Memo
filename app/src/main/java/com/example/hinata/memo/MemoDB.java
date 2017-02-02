@@ -9,9 +9,9 @@ import com.activeandroid.annotation.Table;
  */
 
 @Table(name = "memo_table")
-public class MemoDB  extends Model{
+public class MemoDB extends Model {
 
-    @Column (name = "title")
+    @Column(name = "title")
     public String title;
 
     @Column(name = "memo")

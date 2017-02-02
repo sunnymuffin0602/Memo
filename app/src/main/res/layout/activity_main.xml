@@ -8,8 +8,7 @@
 
 
     <ListView
+        android:id="@+id/memo_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/memo_list">
-    </ListView>
+        android:layout_height="wrap_content"></ListView>
 </RelativeLayout>

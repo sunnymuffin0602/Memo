@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="72dp"
     android:orientation="vertical"
-    android:textSize="14sp"
-    android:textColor="#212121">
+    android:textColor="#212121"
+    android:textSize="14sp">
 
 </TextView>

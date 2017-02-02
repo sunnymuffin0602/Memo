@@ -1,19 +1,13 @@
 package com.example.hinata.memo;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.activeandroid.query.Select;
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -25,11 +19,7 @@ public class MemoDetailActivity extends AppCompatActivity {
     MemoDB mMemoDB;
     EditText mTitle;
     EditText mMemo;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +30,6 @@ public class MemoDetailActivity extends AppCompatActivity {
         mMemo = (EditText) findViewById(R.id.detail_memo);
 
         setmMemo();
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
@@ -69,10 +56,6 @@ public class MemoDetailActivity extends AppCompatActivity {
     }
 
     void deleteMemo() {
-
-
-        Toast.makeText(this, "できたよー", Toast.LENGTH_SHORT).show();
-
         mMemoDB.delete();
     }
 
@@ -80,60 +63,19 @@ public class MemoDetailActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (R.id.detail_save == id) {
-            updateMemo();
-            finish();
+        switch (id) {
+            case R.id.detail_save:
+                updateMemo();
+                finish();
+                return true;
 
-            return true;
+            case R.id.detail_delete:
+                deleteMemo();
+                finish();
 
+                return true;
         }
-        if (R.id.detail_delete == id) {
-            deleteMemo();
-            finish();
-
-            return true;
-        }
-
-
         return onOptionsItemSelected(item);
-
-
-    }
-
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    public Action getIndexApiAction() {
-        Thing object = new Thing.Builder()
-                .setName("MemoDetail Page") // TODO: Define a title for the content shown.
-                // TODO: Make sure this auto-generated URL is correct.
-                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
-                .build();
-        return new Action.Builder(Action.TYPE_VIEW)
-                .setObject(object)
-                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
-                .build();
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
-        client.disconnect();
     }
 }
 
